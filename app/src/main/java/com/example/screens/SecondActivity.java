@@ -12,12 +12,10 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-
         Bundle extras = getIntent().getExtras();
+        textView = (TextView) findViewById(R.id.SecondActivityTextView);
         if (extras != null) {
-            String message = extras.getString("Message");
+            textView.setText(extras.getString("Message"));
         }
-        textView = (TextView)findViewById(R.id.SecondActivityTextView);
-        textView.setText(extras.getString("Message"));
     }
 }
