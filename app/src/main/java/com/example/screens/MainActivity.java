@@ -16,14 +16,14 @@ public class    MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button button =(Button)findViewById(R.id.SecondActivityButton);
+        final Intent intent = new Intent(MainActivity.this, SecondActivity.class);
 
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, SecondActivity.class));
+                intent.putExtra("Message", "Hello guys!");
             }
-
-        }
-        );
+        });
     }
 }
